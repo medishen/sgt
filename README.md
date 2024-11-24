@@ -6,8 +6,22 @@ Welcome to the **Snake Game: Terminal Edition** (`sgt`), a fun and interactive g
 
 - **Interactive Menus**: Use arrow keys to navigate through options.
 - **Real-Time Key Handling**: Responsive keyboard input using raw terminal mode.
-- **Dynamic Display**: Terminal menu updates in real-time based on user input.
+- **Dynamic Display**: Terminal menu updates in real-time ba user input.
 - **Expandable Gameplay**: Built to serve as the foundation for a terminal-based Snake Game.
+
+## Screenshots 📸
+
+### Main Menu
+
+Here is a preview of the **Game Menu**:
+
+![Game Menu](assets/menu_game.jpg)
+
+### Gameplay
+
+Here is a preview of the **Snake Game** in action:
+
+![Snake Game](assets/game.jpg)
 
 ## Prerequisites 📋
 
@@ -15,6 +29,7 @@ Ensure you have the following installed:
 
 - A C compiler (e.g., `gcc`)
 - A terminal emulator (Linux/macOS recommended)
+- Docker (if using Docker image installation)
 
 ---
 
@@ -38,7 +53,9 @@ You have two options to install and run **Snake Game: Terminal Edition** (`sgt`)
    Compile the source code using `make`:
 
    ```bash
-   make
+   make 
+
+   sudo make install 
    ```
 
 3. **Run the Program**
@@ -53,29 +70,39 @@ You have two options to install and run **Snake Game: Terminal Edition** (`sgt`)
 
 ### **Option 2: Installation via Docker Image**
 
+If you prefer not to manually compile the program, you can quickly set it up using Docker.
+
 1. **Ensure Docker is Installed**
 
    Make sure you have Docker installed on your system. If not, follow the [installation instructions](https://docs.docker.com/get-docker/) for your platform.
 
-2. **Build and Run the Docker Image**
+2. **Pull the Docker Image**
 
-   You can build and run the game using Docker by running the following commands:
-
-   ```bash
-   docker-compose up --build
-   ```
-
-   This will build the Docker image and start the `sgt` container, making the game available to run.
-
-3. **Run the Game**
-
-   Once the container is running, the game will automatically start. If you wish to interact with the game inside the Docker container, you can use:
+   To use the pre-built Docker image, run the following command to pull the image from Docker Hub:
 
    ```bash
-   docker exec -it sgt /bin/bash
+   docker pull bitsgenix/sgt
    ```
 
-   From there, you can run the game:
+3. **Run the Docker Container**
+
+   After pulling the image, you can start the container with:
+
+   ```bash
+   docker run --rm -it bitsgenix/sgt
+   ```
+
+   This command will start the game automatically inside the container.
+
+4. **Interactive Mode**
+
+   If you want to interact with the game in the terminal and keep it running interactively, you can use:
+
+   ```bash
+   docker run --rm -it bitsgenix/sgt /bin/bash
+   ```
+
+   Then, inside the container, run the game:
 
    ```bash
    sgt
@@ -85,23 +112,47 @@ You have two options to install and run **Snake Game: Terminal Edition** (`sgt`)
 
 ## Contributing 🤝
 
-Contributions are welcome! For more information on how to contribute, please refer to the [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
+Contributions are welcome! If you have ideas for enhancements or fixes:
+
+1. Fork the repository.
+2. Create a feature branch:
+   ```bash
+   git checkout -b feature-name
+   ```
+3. Commit your changes and push:
+   ```bash
+   git commit -m "Description of changes"
+   git push origin feature-name
+   ```
+4. Open a Pull Request.
+
+For more detailed information on how to contribute, please refer to the [CONTRIBUTING.md](./docs/CONTRIBUTING.md).
+
+---
 
 ## Changelog 📜
 
 For details on version updates, refer to the [CHANGELOG.md](./docs/CHANGELOG.md).
 
+---
+
 ## Frequently Asked Questions ❓
 
 For any questions or common issues, check out the [FAQ.md](./docs/FAQ.md).
+
+---
 
 ## User Guide 📖
 
 For detailed instructions on how to play the game, check out the [USER_GUIDE.md](./docs/USER_GUIDE.md).
 
+---
+
 ## Software Requirements Specification (SRS) 📋
 
 For a detailed technical specification of the game, please refer to the [SRS.md](./docs/SRS.md).
+
+---
 
 ## License 📜
 
@@ -112,7 +163,14 @@ This project is licensed under the [MIT License](LICENSE).
 ### Additional Notes:
 
 - **Docker Installation Details**:
-  - The Docker setup includes a `Dockerfile` and `docker-compose.yml` for building and running the game.
-  - The Docker image is configured to run the game automatically once the container is started.
+  - The Docker image is pre-configured to run the game automatically. This is the easiest installation method, especially if you don't want to manually set up dependencies.
+  - To use the Docker container, simply run `docker run --rm -it bitsgenix/sgt`, and the game will start directly.
+
 - **Build Details in Docker**:
   The Dockerfile sets up the necessary environment, installs dependencies, compiles the source code, and makes the executable available in `/usr/local/bin/sgt`.
+
+  If you'd prefer to customize your own build or test the source code locally, you can refer to **Option 1: Installation via Cloning the Repository** for a more manual approach.
+
+---
+
+Thank you for playing and contributing to **Snake Game: Terminal Edition**!
