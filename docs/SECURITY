@@ -1,0 +1,18 @@
+# Security Policy for Snake Game: Terminal Edition
+
+## Reporting Vulnerabilities
+
+If you discover a security vulnerability in `sgt`, please report it to the maintainer directly at:
+
+- Email: bitsgenix@gmail.com
+
+We will review and address your report as soon as possible.
+
+Please do not disclose the vulnerability publicly until a fix is released.
+
+## Security Best Practices
+
+To ensure a secure and reliable experience, we encourage the following practices:
+
+- Keep the terminal and the game environment updated.
+- Report any suspicious behavior or bugs that could compromise the game or its functionality.

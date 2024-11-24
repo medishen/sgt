@@ -17,7 +17,7 @@ $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
 # Link all object files into the final executable
 $(EXEC): $(OBJ_FILES)
 	$(CC) $(OBJ_FILES) -o $(EXEC) $(LDFLAGS)
-
+# Install the executable to the system's PATH
 install: $(EXEC)
 	cp $(EXEC) $(INSTALL_DIR)
 	chmod +x $(INSTALL_DIR)/$(EXEC)

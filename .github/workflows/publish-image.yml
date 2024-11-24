@@ -19,7 +19,14 @@ jobs:
 
       - name: Get version from VERSION file
         id: get_version
-        run: echo "VERSION=$(cat VERSION)" >> $GITHUB_ENV
+        run: |
+          if [ -f VERSION ]; then
+            echo "VERSION=$(cat VERSION)" >> $GITHUB_ENV
+          elif [ -n "${GITHUB_REF##*refs/tags/*}" ]; then
+            echo "VERSION=${GITHUB_REF##*/}" >> $GITHUB_ENV
+          else
+            echo "VERSION=latest" >> $GITHUB_ENV
+          fi
 
       - name: Build Docker image
         run: docker build -t sgt .
