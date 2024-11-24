@@ -1,0 +1,13 @@
+version: "3.8"
+
+services:
+  sgt:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sgt
+    command: ["sgt"]
+    tty: true
+    stdin_open: true
+    environment:
+      - LICENSE=MIT
