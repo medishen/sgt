@@ -1,7 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include "menu.h"
 #include "../../includes/game/game_config.h"
 #include "../../includes/utils.h"
 void display_menu(int selected_index) {
