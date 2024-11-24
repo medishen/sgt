@@ -39,32 +39,68 @@ You have two options to install and run **Snake Game: Terminal Edition** (`sgt`)
 
 ### **Option 1: Installation via Cloning the Repository**
 
-1. **Clone the Repository**
+Follow these steps to clone, build, and install the game manually on your system:
 
-   Open your terminal and clone the repository:
+#### 1. **Clone the Repository**
 
-   ```bash
-   git clone https://github.com/medishen/sgt.git
-   cd sgt
-   ```
+Start by downloading the project repository to your local machine:
 
-2. **Build the Program**
+```bash
+git clone https://github.com/medishen/sgt.git
+cd sgt
+```
 
-   Compile the source code using `make`:
+#### 2. **Build the Program**
 
-   ```bash
-   make 
+Next, build the program using `make`. This step compiles the source code into an executable binary.
 
-   sudo make install 
-   ```
-
-3. **Run the Program**
-
-   After building, you can start the game by running:
+1. **Run the `make` command** to compile the program:
 
    ```bash
-   sgt
+   make
    ```
+
+   This will:
+
+   - Compile all `.c` files in the `src` directory into `.o` object files under the `obj` directory.
+   - Link the object files to create the final executable named `sgt`.
+
+#### 3. **Install the Executable (Optional)**
+
+To make the `sgt` game available system-wide (so you can run it from anywhere in your terminal), you can install it into your system's `PATH`:
+
+1. Run the following command with `sudo` to install the program to `/usr/local/bin`:
+
+   ```bash
+   sudo make install
+   ```
+
+   This step:
+
+   - Copies the `sgt` executable to `/usr/local/bin`, a standard directory in your system's `PATH`.
+   - Makes the game globally accessible from any terminal session.
+
+2. You’ll see a confirmation message in the terminal, such as:
+
+   ```
+   sgt has been installed to /usr/local/bin
+   ```
+
+#### 4. **Run the Program**
+
+After building (and optionally installing), you can start the game:
+
+- If you installed the game system-wide, simply run:
+
+  ```bash
+  sgt
+  ```
+
+- If you didn’t install it, run it from the project directory:
+
+  ```bash
+  ./sgt
+  ```
 
 ---
 
@@ -163,6 +199,7 @@ This project is licensed under the [MIT License](LICENSE).
 ### Additional Notes:
 
 - **Docker Installation Details**:
+
   - The Docker image is pre-configured to run the game automatically. This is the easiest installation method, especially if you don't want to manually set up dependencies.
   - To use the Docker container, simply run `docker run --rm -it bitsgenix/sgt`, and the game will start directly.
 
